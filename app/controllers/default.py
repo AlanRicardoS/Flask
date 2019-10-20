@@ -2,7 +2,7 @@ from flask import render_template
 from app import app
 
 
-@app.route("/") #define uma rota da pagina. No caso a principal 
-@app.route("/index")
+@app.route("/", defaults={"user":None}) #define uma rota da pagina. No caso a principal 
+@app.route("/index/<user>")
 def index():
-    return "index.html"
+    return render_template("index.html")
